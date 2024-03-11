@@ -1,12 +1,13 @@
 " color
 syntax on
 color elflord
+hi LineNr ctermfg=white
+hi CursorLineNr ctermfg=cyan
+set t_Co=256
 
 " number
 set rnu
 set nu
-hi LineNr ctermfg=white
-hi CursorLineNr ctermfg=cyan
 
 " search
 set incsearch
@@ -37,6 +38,8 @@ set wildmenu
 
 " others
 set scrolloff=10
+set encoding=utf-8
+set mouse=a
 set noerrorbells
 set backspace=indent,eol,start
 set noesckeys
