@@ -36,6 +36,14 @@ filetype plugin on
 set noru
 set wildmenu
 
+" autocmds & keymaps
+autocmd FileType make setlocal noexpandtab
+inoremap {<CR> {<CR>}<Esc>ko
+inoremap ( ()<Esc>i
+inoremap {{ {}<Esc>i
+inoremap " ""<Esc>i
+inoremap [ []<Esc>i
+
 " others
 set scrolloff=10
 set encoding=utf-8
