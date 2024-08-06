@@ -1,12 +1,13 @@
 " color
 syntax on
 color elflord
+hi LineNr ctermfg=gray
+hi CursorLineNr ctermfg=cyan
+set t_Co=256
 
 " number
 set rnu
 set nu
-hi LineNr ctermfg=gray
-hi CursorLineNr ctermfg=gray
 
 " search
 set incsearch
@@ -35,10 +36,19 @@ filetype plugin on
 set noru
 set wildmenu
 
+" autocmds & keymaps
+autocmd FileType make setlocal noexpandtab
+inoremap {<CR> {<CR>}<Esc>ko
+inoremap ( ()<Esc>i
+inoremap {{ {}<Esc>i
+inoremap " ""<Esc>i
+inoremap [ []<Esc>i
+
 " others
 set scrolloff=10
+set encoding=utf-8
+set mouse=a
 set noerrorbells
 set backspace=indent,eol,start
 set noesckeys
 set noswapfile
-set mouse=a
