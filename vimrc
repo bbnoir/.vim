@@ -5,8 +5,8 @@ color elflord
 " number
 set rnu
 set nu
-hi LineNr ctermfg=white
-hi CursorLineNr ctermfg=cyan
+hi LineNr ctermfg=gray
+hi CursorLineNr ctermfg=gray
 
 " search
 set incsearch
@@ -41,3 +41,4 @@ set noerrorbells
 set backspace=indent,eol,start
 set noesckeys
 set noswapfile
+set mouse=a
