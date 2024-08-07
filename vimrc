@@ -1,9 +1,12 @@
+set nocompatible
+
 " color
+set t_Co=256
 syntax on
 color elflord
-hi LineNr ctermfg=gray
-hi CursorLineNr ctermfg=cyan
-set t_Co=256
+hi LineNr ctermfg=lightcyan
+hi LineNrAbove ctermfg=gray
+hi LineNrBelow ctermfg=gray
 
 " number
 set rnu
@@ -28,21 +31,26 @@ set splitbelow
 set splitright
 
 " filetype
-filetype on
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 
 " line
 set noru
 set wildmenu
 
-" autocmds & keymaps
+" keymaps
+let mapleader = " "
+inoremap <C-U> <C-G>u<C-U>
+nnoremap Q gq
+nnoremap <C-S> :wall<CR>
+nnoremap <Leader>o :Exp<CR>
+
 autocmd FileType make setlocal noexpandtab
-inoremap {<CR> {<CR>}<Esc>ko
-inoremap ( ()<Esc>i
-inoremap {{ {}<Esc>i
-inoremap " ""<Esc>i
-inoremap [ []<Esc>i
+
+" restore-cursor last-position-jump
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ | endif
 
 " others
 set scrolloff=10
@@ -52,3 +60,7 @@ set noerrorbells
 set backspace=indent,eol,start
 set noesckeys
 set noswapfile
+set nrformats-=octal
+set history=200
+set autowriteall
+packadd! matchit
